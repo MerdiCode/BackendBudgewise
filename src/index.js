@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT;
 
 app.use(cors({
-    origin:'frontend-budgewise-git-main-merdicodes-projects.vercel.app',
+    origin:'https://frontend-budgewise.vercel.app',
     credentials:true
 }))
 
