@@ -65,6 +65,7 @@ cron.schedule('0 12 * * *', async () => {
 
         })
     })
+    console.log('inDaily')
 }, { timezone: 'UTC' })
 
 //weekly
@@ -98,6 +99,7 @@ cron.schedule('0 12 * * 1', async () => {
                         resolve();
                     });
                 });
+               
             });
 
             // Process Profit
@@ -122,10 +124,10 @@ cron.schedule('0 12 * * 1', async () => {
         });
         db.query(deleteProfit, (err) => {
             if (err) throw err;         
-        });
-
-      
+        });     
     });
+
+    console.log('inWeekly')
 }, { timezone: 'UTC' })
 
 //monthly
@@ -249,6 +251,7 @@ cron.schedule('0 12 1 1 *', async () => {
 
         })
     })
+    console.log('inyearly')
 }, { timezone: 'UTC' })
 
 
