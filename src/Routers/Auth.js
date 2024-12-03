@@ -18,6 +18,7 @@ Router.get('/me', Authentication, (req, res) => {
         if (result.length === 0) {
             return res.status(400).json({ msg: 'user not found' })
         }
+        console.log(result[0])
         return res.status(200).json({ User: result[0] })
 
     })
