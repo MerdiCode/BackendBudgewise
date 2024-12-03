@@ -45,7 +45,7 @@ Router.post('/SignUp', (req, res) => {
       res.cookie('token', token, {
         httpOnly: true,
         secure:process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
+        sameSite: 'None',
         maxAge: 3600000,
         path: '/'
       })
@@ -53,7 +53,7 @@ Router.post('/SignUp', (req, res) => {
       res.cookie('refreshToken', refreshToken, {
         httpOnly: true,
         secure:process.env.NODE_ENV === 'production',
-        sameSite: "strict",
+        sameSite: 'None',
         maxAge: 604800000,
         path: '/'
       })
@@ -93,7 +93,7 @@ Router.post('/LogIn', (req, res) => {
    
     res.cookie('token', token, {
       httpOnly: true,
-      sameSite: 'strict',
+      sameSite: 'None',
       maxAge: 3600000,
       path: '/'
     })
@@ -101,7 +101,7 @@ Router.post('/LogIn', (req, res) => {
 
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
-      sameSite: 'strict',
+      sameSite: 'None',
       maxAge: 604800000,
       path: '/'
     })
