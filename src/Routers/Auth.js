@@ -11,6 +11,7 @@ Router.get('/me', Authentication, (req, res) => {
 
 
     db.query(check, [req.users.id], (err, result) => {
+        console.log(result[0])
         if (err) {
             console.log(err)
         }
