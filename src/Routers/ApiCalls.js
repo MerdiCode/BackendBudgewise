@@ -111,8 +111,8 @@ Router.post('/LogIn', (req, res) => {
 })
 
 Router.post('/Logout',(req,res)=>{
-  res.clearCookie('token')
-  res.clearCookie('refreshToken')
+  res.clearCookie('token', { httpOnly: true, secure: true, sameSite: 'None' });
+  res.clearCookie('refreshToken', { httpOnly: true, secure: true, sameSite: 'None' });
   res.json({msg:'loged out seccessfullly'})
   })
 module.exports = Router;
