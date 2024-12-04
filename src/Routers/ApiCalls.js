@@ -55,7 +55,7 @@ Router.post('/SignUp', (req, res) => {
         httpOnly: true,
         secure:process.env.NODE_ENV === 'production',
         sameSite: 'None',
-        secure: true
+        secure: true,
         maxAge: 604800000,
         path: '/'
       })
