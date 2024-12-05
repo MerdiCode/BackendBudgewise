@@ -44,16 +44,16 @@ Router.post('/SignUp', (req, res) => {
 
       res.cookie('token', token, {
         httpOnly: true,
-        secure:process.env.NODE_ENV === 'production',
-        sameSite: 'None',
+        secure: true,
+        sameSite: 'lax',
         maxAge: 3600000,
         path: '/'
       })
 
       res.cookie('refreshToken', refreshToken, {
         httpOnly: true,
-        secure:process.env.NODE_ENV === 'production',
-        sameSite: 'None',
+        secure: true,
+        sameSite: 'lax',
         maxAge: 604800000,
         path: '/'
       })
@@ -96,7 +96,7 @@ Router.post('/LogIn', (req, res) => {
           res.cookie('token', token, {
               httpOnly: true,
               secure: true,
-              sameSite: 'None',
+              sameSite: 'lax',
               maxAge: 3600000,
     
               path: '/'
@@ -105,7 +105,7 @@ Router.post('/LogIn', (req, res) => {
           res.cookie('refreshToken', refreshToken, {
               httpOnly: true,
               secure: true,
-              sameSite: 'None',
+              sameSite: 'lax',
               maxAge: 604800000,
               path: '/'
           });
@@ -120,8 +120,8 @@ Router.post('/LogIn', (req, res) => {
 
 
 Router.post('/Logout',(req,res)=>{
-  res.clearCookie('token', { httpOnly: true, secure: true, sameSite: 'None' });
-  res.clearCookie('refreshToken', { httpOnly: true, secure: true, sameSite: 'None' });
+  res.clearCookie('token', { httpOnly: true, secure: true, sameSite: 'lax' });
+  res.clearCookie('refreshToken', { httpOnly: true, secure: true, sameSite: 'lax' });
   res.json({msg:'loged out seccessfullly'})
   })
 module.exports = Router;
