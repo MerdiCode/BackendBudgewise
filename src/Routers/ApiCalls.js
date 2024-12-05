@@ -46,7 +46,6 @@ Router.post('/SignUp', (req, res) => {
         httpOnly: true,
         secure:process.env.NODE_ENV === 'production',
         sameSite: 'None',
-        secure: true,
         maxAge: 3600000,
         path: '/'
       })
@@ -55,7 +54,6 @@ Router.post('/SignUp', (req, res) => {
         httpOnly: true,
         secure:process.env.NODE_ENV === 'production',
         sameSite: 'None',
-        secure: true,
         maxAge: 604800000,
         path: '/'
       })
@@ -100,6 +98,7 @@ Router.post('/LogIn', (req, res) => {
               secure: true,
               sameSite: 'None',
               maxAge: 3600000,
+    
               path: '/'
           });
 
