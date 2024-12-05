@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
  const Authentication = (req, res, next) => {
      const token = req.cookies.token;
      const refreshToken = req.cookies.refreshToken;
- console.log(req.cookies)
+ console.log( req.cookies.refreshToken)
      if (!token && !refreshToken) {
          return res.status(401).json({ msg: "Missing token" });
      }
