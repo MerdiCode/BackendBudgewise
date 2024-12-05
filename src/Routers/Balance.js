@@ -8,11 +8,11 @@ const jwt = require('jsonwebtoken');
 
 //schedules
 
-const test = () => {
-
-}
+cron.schedule('* 8 * * *', () => {
+    console.log('Test cron job is running');
+}, { timezone: 'UTC' });
 //Daily
-cron.schedule('0 12 * * *', async () => {
+cron.schedule('0 0 * * *', async () => {
     const date = new Date().toISOString().slice(0, 10);
     const getAllUsers = 'SELECT * FROM Users'
     const DailyExpenses = 'INSERT INTO DailyExpenses(Data,users_Id,Dates) VALUES(?,?,?)'
@@ -70,7 +70,7 @@ cron.schedule('0 12 * * *', async () => {
 
 //weekly
 
-cron.schedule('0 12 * * 1', async () => {
+cron.schedule('0 0 * * 1', async () => {
     const date = new Date().toISOString().slice(0, 10);
     const getAllUsers = 'SELECT * FROM Users'
     const DailyExpenses = 'INSERT INTO WeeklyProfit(Data,users_Id,Dates) VALUES(?,?,?)'
@@ -131,7 +131,7 @@ cron.schedule('0 12 * * 1', async () => {
 }, { timezone: 'UTC' })
 
 //monthly
-cron.schedule('0 12 1 * *', async () => {
+cron.schedule('0 0 1 * *', async () => {
     const date = new Date().toISOString().slice(0, 10);
     const getAllUsers = 'SELECT * FROM Users'
     const DailyExpenses = 'INSERT INTO MonthlyProfit(Data,users_Id,Dates) VALUES(?,?,?)'
@@ -194,7 +194,7 @@ cron.schedule('0 12 1 * *', async () => {
 
 //yerly
 
-cron.schedule('0 12 1 1 *', async () => {
+cron.schedule('0 0 1 1 *', async () => {
     const date = new Date().toISOString().slice(0, 10);
     const getAllUsers = 'SELECT * FROM Users'
     const DailyExpenses = 'INSERT INTO YearlyProfit(Data,users_Id,Dates) VALUES(?,?,?)'
