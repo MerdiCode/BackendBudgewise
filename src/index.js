@@ -19,5 +19,5 @@ app.use('/users',api)
 api.use(Balance)
 api.use('/auth',Auth)
 app.listen(port,()=>{
-    console.log(server is running in port ${port})
+    console.log(`server is running in port ${port}`)
 })
