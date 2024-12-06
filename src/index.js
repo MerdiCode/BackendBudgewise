@@ -9,9 +9,7 @@ const app = express();
 const port = process.env.PORT;
 app.use(cors({
     origin:'https://budgewisee.vercel.app',
-    credentials:true,
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Origin', 'Host']
+    credentials:true
 }))
 app.use(express.json())
 app.use(cookieParser())
